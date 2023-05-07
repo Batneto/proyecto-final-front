@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+
+/**
+ * 
+ * @param {String} estadoInicial 
+ * @returns 
+ */
+
 export const useForm = (estadoInicial = "") => {
   
   const [formulario, setFormulario] = useState({  estadoInicial });

@@ -13,12 +13,10 @@ function App() {
     <>
    
 
-
     <AppRouter/>
     <Footer/>
 
 
-   
     </>
   )
 }

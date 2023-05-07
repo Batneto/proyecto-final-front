@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux"
-import {onDelete} from '../../store/slices/adminSlice'
-import {setLocal} from '../../helpers/setLocal'
+
 
 import {consulta} from '../../api/fecth'
 

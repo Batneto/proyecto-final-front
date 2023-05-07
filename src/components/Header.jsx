@@ -7,8 +7,7 @@ const navigation = [
 
 
   { name: 'Home', href: '/', current: true },
-  { name: 'Team', href: '#', current: false },
- 
+
   { name: 'Registro', href: '/registrer', current: false },
 ]
 

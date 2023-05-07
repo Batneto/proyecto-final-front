@@ -17,8 +17,7 @@ export const FormCrear = () => {
      const onSubmit = (ev) => {
    
        ev.preventDefault();
-        console.log(formulario);
-
+        
       const formularioUser={
 
         ...formulario,

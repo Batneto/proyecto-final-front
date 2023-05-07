@@ -56,9 +56,6 @@ export const CardsHomeUsers = ({titulo,precio}) => {
 					<div class="flex items-center justify-between">
 							<span class="text-3xl font-bold text-gray-900 dark:text-white"> {precio} $ </span>
 						<div>
-							<PayPalScriptProvider
-									options={{ "client-id": 'AVvlw8FnbXJ8wXKA3MgbkH2OHuzkHv_6OVzX-hlQSNwY6YbVCilshyqB6isfXcybxFKLb--Rv05hU3rv' }}
-								>
 									<PayPalButtons
 									style={{ layout: "horizontal" }}
 
@@ -68,14 +65,14 @@ export const CardsHomeUsers = ({titulo,precio}) => {
 										purchase_units: [
 											{
 											amount: {
-												value: 40 ,
+												value: 60 ,
 											},
 											},
 										],
 										});
 									}}
 									/>
-							</PayPalScriptProvider>
+							
 						</div>
 					</div>
 				</div>

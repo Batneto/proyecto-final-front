@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react"
 import {consulta} from '../api/fecth'
 
-
+/**
+ * 
+ * @param {String} url 
+ * @param {String} method 
+ * @param {Object} body 
+ * @returns 
+ */
 
 export const useFecth = (url,method,body) => {
 
