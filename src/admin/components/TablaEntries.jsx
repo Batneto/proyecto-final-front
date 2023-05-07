@@ -29,4 +29,4 @@ export const TablaEntries = ({id_entradas,titulo,contenido,fecha,precio,imagen_p
 
 
 
-//<a href={`/editar/${id_entradas}`} class=" flex  flex-row  mb-4  bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Edit</a>
+

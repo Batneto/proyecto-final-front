@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
+
 export const CardUser = ({id_entradas,titulo,precio}) => {
 
     const navigate = useNavigate();

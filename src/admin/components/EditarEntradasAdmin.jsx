@@ -8,6 +8,7 @@ import {useAuth} from '../../auth/hooks/useAuth'
 export const EditEntriesAdmin = ({id}) => {
 
     const {editar}=useAuth()
+    
     const navigate = useNavigate();
 
     const {datos,isLoading}= useFecth(`/entries/one/${id}`)  
@@ -57,7 +58,7 @@ export const EditEntriesAdmin = ({id}) => {
                         </div>
                          <div>
                              <input type="number" name='precio' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"
-                              onChange={handleChange} value={formulario.precio || ''}   placeholder="precio"/>
+                              onChange={handleChange} value={datos[0].precio || ''}   placeholder="precio"/>
                         </div>
                          <div>
                         <input type="text" name='contenido' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8" 
