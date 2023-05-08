@@ -18,19 +18,19 @@ export const AppRouter = () => {
   return (
     <div>
 {
-          (local[0].users.status === 'not-authenticated')
+          (local[0].users.status === 'authenticated'||local[0].admin.status === 'authenticated' )
               ? (
                   <>
     
-                    <IndexRouter/>
-                            
+                     <PrivateRouter/>
+                           
 
                   </>
                         )
                 : (
                     <>
                              
-                    <PrivateRouter/>
+                    <IndexRouter/>
 
                     </>
                         )

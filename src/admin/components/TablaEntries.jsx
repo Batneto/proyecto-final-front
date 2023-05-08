@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 
-export const TablaEntries = ({id_entradas,titulo,contenido,fecha,precio,imagen_producto}) => {
+export const TablaEntries = ({id_entradas,titulo,contenido,fecha,precio}) => {
  
     const {getDeleteEntrie}= useAdmin()
 
@@ -13,8 +13,9 @@ export const TablaEntries = ({id_entradas,titulo,contenido,fecha,precio,imagen_p
     const {status}= useSelector(state => state.admin)
 
     useEffect(()=>{
-      status
-    },[])
+
+      
+    },[status])
 
 
   return (

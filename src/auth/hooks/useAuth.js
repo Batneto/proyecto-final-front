@@ -9,7 +9,14 @@ export const useAuth =  () => {
 
     const dispatch=useDispatch()
   
-    const startLogin= async(form)=>{
+    /**
+     * 
+     * @param {Object} form 
+     * recibe los parametros introducidos por el formulario de login para mandarlos a la base de datos y comprobar si los datos son correctos
+     */
+
+
+    const startLogin= async(form)=>{ 
 
         try {
 
@@ -39,7 +46,11 @@ export const useAuth =  () => {
     }
 
     
-
+    /**
+     * 
+     * @param {Object} form 
+     * recibe los valores del formurario para mandarlos a la base de datos y registrar el usuario
+     */
     const registrer= async(form)=>{
 
         const fakeLog={

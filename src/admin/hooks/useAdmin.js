@@ -11,7 +11,7 @@ export const useAdmin = () => {
     const getDeleteUser= async(id)=>{
 
         try {
-            console.log(id);
+           
             const respuesta  = await consulta(`/user/delete/${id}`,'delete')      
 
         } catch (error) {
@@ -24,7 +24,7 @@ export const useAdmin = () => {
 
             const respuesta  = await consulta(`/entries/delete/${id}`,'delete')   
             
-            dispatch(onDelete('ususario borrado'))
+            dispatch(onDelete('entrada borrado'))
             
 
         } catch (error) {

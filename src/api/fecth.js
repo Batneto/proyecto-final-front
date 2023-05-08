@@ -1,6 +1,12 @@
 const urlBase='http://localhost:3000/api'
 
-
+/**
+ * 
+ * @param {String} url 
+ * @param {String} method 
+ * @param {Object} body 
+ * @returns 
+ */
 
 export const consulta = async(url,method,body) => {
  

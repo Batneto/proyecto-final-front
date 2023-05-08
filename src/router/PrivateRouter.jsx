@@ -13,7 +13,7 @@ export const PrivateRouter = () => {
       
        
        {
-          (local[0].users.user.id_rol === 1)
+          (local[0].users.user.id_rol === 1 || local[0].admin===true)
           
               ? (
                   <>   

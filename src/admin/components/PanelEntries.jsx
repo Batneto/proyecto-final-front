@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useFecth } from '../../hooks/useFetch'
 
 import { TablaEntries } from './TablaEntries';
+import { useSelector } from 'react-redux';
 
 
 export const PanelEntries = () => {
 
   const {datos,isLoading}= useFecth('/entries/all')
 
+  const {status}= useSelector(state => state.admin)
+
+ 
  
   return (
     <>

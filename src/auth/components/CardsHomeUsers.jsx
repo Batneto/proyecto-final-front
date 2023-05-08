@@ -7,6 +7,7 @@ export const CardsHomeUsers = ({titulo,precio}) => {
 
 	
   return (
+	
 	 <div class="max-w-2xl mx-auto">
 
 

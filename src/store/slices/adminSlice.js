@@ -7,7 +7,7 @@ export const adminSlice = createSlice({
 
     initialState: {
         status:'',
-        admin: '',
+        admin: true,
         
     },
     
@@ -16,7 +16,7 @@ export const adminSlice = createSlice({
         onDelete: (state, action) => {
 
             state.status = 'authenticated';
-            state.admin = action.payload;
+            state.admin = true;
         
         }
     }

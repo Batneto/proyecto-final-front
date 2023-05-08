@@ -7,6 +7,7 @@ export const userSlice = createSlice({
 
     initialState: {
         user: {},
+        admin:false,
         status: 'not-authenticated',
         errorMessage: undefined
     },
@@ -26,6 +27,7 @@ export const userSlice = createSlice({
         onLogout: (state, action) => {
 
             state.user = {};
+            state.admin=false,
             state.status = 'not-authenticated';
             state.errorMessage = action.payload;
         }
