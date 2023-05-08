@@ -90,13 +90,24 @@ export const useAuth =  () => {
         const creado  = await consulta('/entries','post',form) 
     }
 
+    /**
+     * 
+     * @param {Object} form 
+     * @param {Number} id 
+     * recive el objeto del formulario y el id del usiario para poder relacionarlo con la entrada  
+     */
 
     const editar=async(form,id)=>{
 
         const editar  = await consulta(`/entries/actualizar/${id}`,'put',form) 
     }
 
-    
+     /**
+     * 
+     * @param {Object} form 
+     * @param {Number} id 
+     * recive el objeto del formulario y el id del usiario para que solo el usuario pueda editar sus datos
+     */
     const editarUsuario=async(form,id)=>{
 
         const editar  = await consulta(`/user/actualizar/${id}`,'put',form) 

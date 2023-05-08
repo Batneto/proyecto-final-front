@@ -4,10 +4,16 @@ import {onDelete} from '../../store/slices/adminSlice'
 import {consulta} from '../../api/fecth'
 
 
-export const useAdmin = () => {
+export const    useAdmin = () => {
 
     const dispatch=useDispatch()
   
+
+    /**
+     * 
+     * @param {Number} id
+     * recibe el id del usuario para poder eliminarlo 
+     */
     const getDeleteUser= async(id)=>{
 
         try {
@@ -18,6 +24,12 @@ export const useAdmin = () => {
             console.log('error en la eliminician');
         }
     }
+
+    /**
+     * 
+     * @param {Number} id 
+     * Recive el id de la entrada para poder eliminarla
+     */
     const getDeleteEntrie= async(id)=>{
 
         try {
@@ -32,15 +44,28 @@ export const useAdmin = () => {
         }
     }
 
+    /**
+     * 
+     * @param {Object} form 
+     * recibe el formulario de crear para introducir la nueva categoria 
+     */
+    const crearCategory= async(form)=>{
+
+        try {
+           
+            const respuesta  = await consulta(`/category`,'post',form)      
+
+        } catch (error) {
+            console.log('error en la eliminician');
+        }
+    }
 
 
-
-
-
-   
+    
 return {
     getDeleteUser,
-    getDeleteEntrie
+    getDeleteEntrie,
+    crearCategory
         
         }
 }
