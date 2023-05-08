@@ -22,7 +22,9 @@ function classNames(...classes) {
 export default function NavBar() {
 
   const local=init()
+  
   const id=local[0].users.user.id_usuarios
+
   const {logOut} =useAuth()
   return (
     <Disclosure as="nav" className="bg-gray-800">

@@ -7,7 +7,7 @@ export const adminSlice = createSlice({
 
     initialState: {
         status:'',
-        admin: true,
+        admin: false,
         
     },
     
