@@ -6,15 +6,17 @@ export const adminSlice = createSlice({
     name: 'admin',
 
     initialState: {
-        user: {},
-
+        status:'',
+        admin: '',
+        
     },
     
     reducers: {
 
         onDelete: (state, action) => {
-            
-            state.user = action.payload;
+
+            state.status = 'authenticated';
+            state.admin = action.payload;
         
         }
     }

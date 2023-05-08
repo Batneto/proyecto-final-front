@@ -12,7 +12,7 @@ export const Login = () => {
 
      const navigate = useNavigate();
 
-     const estado= useSelector(state => state.users)
+     const {errorMessage,status,user}= useSelector(state => state.users)
        
      const { formulario, handleChange } = useForm("");
 
@@ -24,7 +24,7 @@ export const Login = () => {
 
         startLogin(formulario)
 
-        if (estado.status==="not-authenticated") {
+        if (status==="not-authenticated") {      
             navigate ('/login') 
 
         }else{
@@ -62,12 +62,16 @@ export const Login = () => {
                 <input type="password" name='pass' className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8" onChange={handleChange} placeholder="Password " />
             </div>
 
-            <div className="flex">
-                <input type="checkbox" className="border-sky-400 " value="" />
-                <div className="px-3 text-gray-500">
-                    Acepto terminos y condiciones
-                </div>
-            </div>
+
+            {
+                (errorMessage) && <p className=' text-center  text-red-600 ' > {errorMessage} </p>
+
+
+
+            }
+            
+
+            
             <div className="flex justify-center my-6">
                 <button className=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold " >
                     Login

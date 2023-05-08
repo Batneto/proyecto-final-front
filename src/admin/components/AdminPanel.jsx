@@ -5,7 +5,8 @@ import { TablaUsers } from './TablaUser';
 
 export const AdminPanel = () => {
 
-  const {datos,isLoading}= useFecth('/user/all')
+  const {datos,isLoading}= useFecth('/user')
+
 
  
   return (

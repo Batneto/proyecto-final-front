@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useAdmin} from '../hooks/useAdmin'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 
 export const TablaEntries = ({id_entradas,titulo,contenido,fecha,precio,imagen_producto}) => {
  
     const {getDeleteEntrie}= useAdmin()
+
     const navigate=useNavigate()
+
+    const {status}= useSelector(state => state.admin)
+
+    useEffect(()=>{
+      status
+    },[])
 
 
   return (

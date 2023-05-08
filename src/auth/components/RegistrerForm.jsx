@@ -2,10 +2,13 @@
 import { useForm } from '../../hooks/useForm';
 import { useNavigate } from 'react-router-dom'
 import {useAuth} from '../hooks/useAuth'
+import { useSelector } from 'react-redux';
 
 export const RegistrerForm = () => {
 
     const navigate = useNavigate();
+
+    const {errorMessage,status}= useSelector(state => state.users)
 
     const {registrer}=useAuth()
     
@@ -16,8 +19,14 @@ export const RegistrerForm = () => {
        ev.preventDefault();
          
        registrer(formulario)
-       
-      navigate ('/users')
+       if (status==="not-authenticated") {      
+        navigate ('/registrer') 
+
+        }else{
+            
+            navigate ('/users')  
+        }
+      
    
      };
   return (
@@ -43,6 +52,14 @@ export const RegistrerForm = () => {
             <div class="">
                 <input type="password" name='pass' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8" onChange={handleChange} placeholder="Contraseña" />
             </div>
+
+            {
+                (errorMessage) && <p className=' text-center  text-red-600 ' > {errorMessage} </p>
+
+
+
+            }
+
             <div class="flex">
                 <input type="checkbox" class="border-sky-400 " value="" />
                 <div class="px-3 text-gray-500">

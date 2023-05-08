@@ -65,7 +65,7 @@ export const CardsHomeUsers = ({titulo,precio}) => {
 										purchase_units: [
 											{
 											amount: {
-												value: 60 ,
+												value: 0.01 ,
 											},
 											},
 										],

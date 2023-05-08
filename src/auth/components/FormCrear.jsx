@@ -59,22 +59,14 @@ export const FormCrear = () => {
                 <option value="3">figuras</option>
             </select>
 
-            <div class="flex">
-                <input type="checkbox" class="border-sky-400 " value="" />
-                <div class="px-3 text-gray-500">
-                    I accept terms & conditions 
-                </div>
-            </div>
+          
             <div class="flex justify-center my-6">
                 <button class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold " >
                     Crear
                 </button>
             </div>
             
-            <div class="flex justify-center ">
-                <p class="text-gray-500">Already have an acount? </p>
-                <a href="/login" class="text-sky-600 pl-2"> Sign In</a>
-            </div>
+           
         </form>
     </div>
 </div>

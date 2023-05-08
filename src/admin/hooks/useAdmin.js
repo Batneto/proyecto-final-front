@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-
+import {onDelete} from '../../store/slices/adminSlice'
 
 import {consulta} from '../../api/fecth'
 
@@ -11,7 +11,7 @@ export const useAdmin = () => {
     const getDeleteUser= async(id)=>{
 
         try {
-
+            console.log(id);
             const respuesta  = await consulta(`/user/delete/${id}`,'delete')      
 
         } catch (error) {
@@ -22,7 +22,10 @@ export const useAdmin = () => {
 
         try {
 
-            const respuesta  = await consulta(`/entries/delete/${id}`,'delete')      
+            const respuesta  = await consulta(`/entries/delete/${id}`,'delete')   
+            
+            dispatch(onDelete('ususario borrado'))
+            
 
         } catch (error) {
             console.log('error en la eliminician');

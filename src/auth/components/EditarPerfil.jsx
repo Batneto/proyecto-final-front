@@ -5,13 +5,13 @@ import { useFecth } from '../../hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
 import {useAuth} from '../hooks/useAuth'
 
-export const EditEntries = ({id}) => {
+export const EditarPerfil = ({id}) => {
 
-    const {editar}=useAuth()
+    const {editarUsuario}=useAuth()
     
     const navigate = useNavigate();
 
-    const {datos,isLoading}= useFecth(`/entries/one/${id}`)  
+    const {datos,isLoading}= useFecth(`/user/${id}`)  
     
     const { formulario, handleChange, setFormulario } = useForm();
 
@@ -30,7 +30,7 @@ export const EditEntries = ({id}) => {
    
         ev.preventDefault();
 
-        editar(formulario,id)
+        editarUsuario(formulario,id)
 
         navigate ('/users')  
     
@@ -53,30 +53,25 @@ export const EditEntries = ({id}) => {
                     </div>
                     <form onSubmit={onSubmit} >
                         <div>
-                             <input type="text" name='titulo' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500" 
-                             onChange={handleChange} value={formulario.titulo || ''} placeholder='titulo'/>
+                             <input type="text" name='nombre' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500" 
+                             onChange={handleChange} value={formulario.nombre || ''} placeholder='nombre'/>
                         </div>
                          <div>
-                             <input type="number" name='precio' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"
-                              onChange={handleChange} value={formulario.precio || ''}   placeholder="precio"/>
+                             <input type="text" name='email' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"
+                              onChange={handleChange} value={formulario.email || ''}   placeholder="email"/>
                         </div>
                          <div>
-                        <input type="text" name='contenido' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8" 
-                        onChange={handleChange} value={formulario.contenido || ''}  placeholder="contenido "/>
+                        <input type="text" name='apodo' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8" 
+                        onChange={handleChange} value={formulario.apodo || ''}  placeholder="apodo "/>
                         </div>
                          <div>
-                        <input type="text" name='imagen_producto' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"
-                         onChange={handleChange} value={formulario.imagen_producto || ''} placeholder="Imagen "/>
+                        <input type="text" name='imagen_perfil' class="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"
+                         onChange={handleChange} value={formulario.imagen_perfil || ''} placeholder="Imagen "/>
                         </div>
-            
+                        <input type="hidden" name='pass' value={formulario.pass} />
                        
             
-                        <div class="flex">
-                            <input type="checkbox" class="border-sky-400 " value="" />
-                            <div class="px-3 text-gray-500">
-                                I accept terms & conditions 
-                            </div>
-                        </div>
+                      
                         <div class="flex justify-center my-6">
                             <button class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold " >
                                 Editar

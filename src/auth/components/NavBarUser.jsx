@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import {useAuth} from '../../auth/hooks/useAuth'
 import {logo} from '../../assets/index'
+import {init} from '../../helpers/getLocal'
 
 const navigation = [
 
@@ -19,6 +20,9 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+
+  const local=init()
+  const id=local[0].users.user.id_usuarios
   const {logOut} =useAuth()
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -112,7 +116,7 @@ export default function NavBar() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href={`editarte/${id}`}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Settings

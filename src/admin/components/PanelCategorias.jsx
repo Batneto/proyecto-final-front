@@ -13,7 +13,7 @@ export const PanelCategorias = () => {
   return (
     <>
 
-
+<a href="">Añadir Categoria</a>
 
 <table class="min-w-full mt-6 border-collapse block md:table">
 		<thead class="block md:table-header-group">

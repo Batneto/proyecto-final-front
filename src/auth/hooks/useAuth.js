@@ -28,7 +28,7 @@ export const useAuth =  () => {
 
             
         } catch (error) {
-            dispatch(onLogout('usuario no válido'))
+            dispatch(onLogout('Usuario o Contraseña incorrectas'))
         }
     }
 
@@ -68,7 +68,7 @@ export const useAuth =  () => {
 
             
         } catch (error) {
-            dispatch(onLogout('usuario no válido'))
+            dispatch(onLogout('Error al crear el usuario'))
         }
     }
 
@@ -85,6 +85,13 @@ export const useAuth =  () => {
         const editar  = await consulta(`/entries/actualizar/${id}`,'put',form) 
     }
 
+    
+    const editarUsuario=async(form,id)=>{
+
+        const editar  = await consulta(`/user/actualizar/${id}`,'put',form) 
+    }
+
+
 
 
    
@@ -93,6 +100,7 @@ return {
         logOut,
         registrer,
         crear,
-        editar
+        editar,
+        editarUsuario
         }
 }
