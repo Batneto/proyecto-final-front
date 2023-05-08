@@ -4,6 +4,7 @@ import { useForm } from '../../hooks/useForm';
 import { useFecth } from '../../hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
 import {useAuth} from '../hooks/useAuth'
+import { useSelector } from 'react-redux';
 
 export const EditEntries = ({id}) => {
 
@@ -14,6 +15,11 @@ export const EditEntries = ({id}) => {
     const {datos,isLoading}= useFecth(`/entries/one/${id}`)  
     
     const { formulario, handleChange, setFormulario } = useForm();
+
+    const {errorMessage,status,user}= useSelector(state => state.users)
+
+    
+
 
     
     useEffect(() => {
@@ -32,7 +38,16 @@ export const EditEntries = ({id}) => {
 
         editar(formulario,id)
 
-        navigate ('/users')  
+
+        if (errorMessage) {      
+            navigate (`editar/${id}`) 
+
+        }else{
+           
+            navigate ('/users')  
+        }
+
+        
     
       };
  
@@ -71,12 +86,13 @@ export const EditEntries = ({id}) => {
             
                        
             
-                        <div class="flex">
-                            <input type="checkbox" class="border-sky-400 " value="" />
-                            <div class="px-3 text-gray-500">
-                                I accept terms & conditions 
-                            </div>
-                        </div>
+                        
+            {
+                (errorMessage) && <p className=' text-center  text-red-600 ' > {errorMessage} </p>
+
+
+
+            }
                         <div class="flex justify-center my-6">
                             <button class=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold " >
                                 Editar

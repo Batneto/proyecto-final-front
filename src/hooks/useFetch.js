@@ -23,7 +23,7 @@ export const useFecth = (url,method,body) => {
             
             const respuesta= await consulta(url,method,body)
                 
-                
+                console.log(respuesta);
                 const {data} = await respuesta.json()
 
                

@@ -1,4 +1,4 @@
-const urlBase='http://localhost:3000/api'
+const urlBase='https://bazara-back2.onrender.com/api'
 
 /**
  * 

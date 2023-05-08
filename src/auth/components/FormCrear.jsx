@@ -3,6 +3,9 @@ import { useForm } from '../../hooks/useForm';
 import { useNavigate } from 'react-router-dom'
 import {useAuth} from '../hooks/useAuth'
 import {init} from '../../helpers/getLocal'
+import { useSelector } from 'react-redux';
+import { SelectorCategoria } from './SelectorCategoria';
+import { useFecth } from '../../hooks/useFetch';
 
 export const FormCrear = () => {
 
@@ -13,7 +16,15 @@ export const FormCrear = () => {
     const {crear}=useAuth()
     
      const { formulario, handleChange } = useForm("");
+
+
+     const {errorMessage,status,user}= useSelector(state => state.users)
    
+     const {datos,isLoading}= useFecth('/category')
+
+    
+
+
      const onSubmit = (ev) => {
    
        ev.preventDefault();
@@ -28,7 +39,15 @@ export const FormCrear = () => {
          
        crear(formularioUser)
        
-      navigate ('/users')
+      
+       if (errorMessage) {      
+        navigate ('/crear') 
+
+        }else{
+        
+            navigate ('/users')  
+        }
+
    
      };
 
@@ -54,9 +73,18 @@ export const FormCrear = () => {
             </div>
 
             <select name='id_categorias' className='ml-36'onChange={handleChange} >
-                <option value="1">Muñecos</option>
-                <option value="2">Juegos</option>
-                <option value="3">figuras</option>
+
+
+                
+            {datos.map((item)=>(
+                          
+                    
+                          <SelectorCategoria key={item.id}
+
+                              {...item} 
+                              />
+                      ))}
+                
             </select>
 
           

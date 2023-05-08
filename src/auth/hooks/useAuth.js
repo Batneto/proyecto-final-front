@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import {onLogin,onLogout} from '../../store/slices/userSlice'
+import {onLogin,onLogout,errors} from '../../store/slices/userSlice'
 import {setLocal} from '../../helpers/setLocal'
 
 import {consulta} from '../../api/fecth'
@@ -51,6 +51,8 @@ export const useAuth =  () => {
      * @param {Object} form 
      * recibe los valores del formurario para mandarlos a la base de datos y registrar el usuario
      */
+   
+   
     const registrer= async(form)=>{
 
         const fakeLog={
@@ -99,7 +101,19 @@ export const useAuth =  () => {
 
     const editar=async(form,id)=>{
 
-        const editar  = await consulta(`/entries/actualizar/${id}`,'put',form) 
+        try {
+
+            const editar  = await consulta(`/entries/actualizar/${id}`,'put',form) 
+
+
+        } catch (error) {
+
+            console.log('se va por el else');
+            
+            dispatch(errors('error al editar entrada comprobar los datos'))
+        }
+
+        
     }
 
      /**
