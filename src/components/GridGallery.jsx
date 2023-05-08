@@ -10,7 +10,7 @@ export const GridGallery = () => {
 
     <div>   
         
-        <div className='grid   grid-cols-2  gap-10 mt-6 '>
+        <div className='grid   grid-cols-1  gap-10 mt-6   md:grid-cols-2 '>
 
             {datos.map((item)=>(
               
