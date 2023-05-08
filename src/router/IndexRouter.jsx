@@ -25,8 +25,10 @@ export const IndexRouter = () => {
                 
                 <Route path='/login' element={<LoginPage/>} />   
                 <Route path='/registrer' element={<RegistrerPage/>} />
-                
-                <Route path='/*' element={<HomePage/>} />
+                <Route exact path="/" element={<HomePage/>} />
+
+
+                <Route exact path='/*' element={<HomePage/>} />
         
         </Routes>
 
