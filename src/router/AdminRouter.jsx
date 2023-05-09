@@ -14,11 +14,11 @@ export const AdminRouter = () => {
       <AdminNav/>
       <Routes>
                  
-                <Route path='/admin' element={<AdminPage/>} />    
-                <Route path='/admin/entries' element={<AdminEntries/>} />
-                <Route path='/admin/categorias' element={<AdminCategorias/>} />
-                <Route path='/editar/:id' element={<AdminEditar/>} />  
-                <Route path='/crear' element={<AdminCrearCategory/>} />  
+                <Route path='admin' element={<AdminPage/>} />    
+                <Route path='admin/entries' element={<AdminEntries/>} />
+                <Route path='admin/categorias' element={<AdminCategorias/>} />
+                <Route path='editar/:id' element={<AdminEditar/>} />  
+                <Route path='crear' element={<AdminCrearCategory/>} />  
 
         
         </Routes>

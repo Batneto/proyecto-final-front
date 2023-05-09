@@ -18,13 +18,13 @@ export const AuthRouter = () => {
     <div>
         <Routes>
                 
-                <Route path='/crear' element={<CrearEntrada/>} />   
-                <Route path='/entradasPropias' element={<MisEntradas/>} /> 
-                <Route path='/editar/:id' element={<FormEditar/>} /> 
-                <Route path='/editarte/:id' element={<EditarPerfilPage/>} /> 
+                <Route path='crear' element={<CrearEntrada/>} />   
+                <Route path='entradasPropias' element={<MisEntradas/>} /> 
+                <Route path='editar/:id' element={<FormEditar/>} /> 
+                <Route path='editarte/:id' element={<EditarPerfilPage/>} /> 
                 
                 
-                <Route path='/users' element={<HomeUser/>}/>
+                <Route path='users' element={<HomeUser/>}/>
 
                 <Route path='/*' element={<HomeUser/>} />
         
